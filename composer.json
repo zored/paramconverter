@@ -1,4 +1,18 @@
 {
+    "name": "zored/paramconverter",
+    "type": "library",
+    "description": "ParamConverter for PHP 7.1+",
+    "keywords": ["paramconverter"],
+    "homepage": "https://github.com/zored/paramconverter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robert Akhmerov",
+            "email": "r@rob.su",
+            "homepage": "http://rob.su",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "jms/serializer": "^1.6",
         "symfony/cache": "^3.2"
