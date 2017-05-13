@@ -15,6 +15,11 @@ use Zored\ParamConverter\Parameter\Extractor\CacheExtractor;
 use Zored\ParamConverter\Parameter\Extractor\ExtractorInterface;
 use Zored\ParamConverter\Parameter\Extractor\MethodExtractor;
 
+/**
+ * Builds parameter converter.
+ *
+ * @see Converter
+ */
 class ConverterBuilder
 {
     /**
@@ -28,7 +33,8 @@ class ConverterBuilder
     private $extractor;
 
     /**
-     * @param SerializerInterface $serializer
+     * @param SerializerInterface     $serializer
+     * @param ExtractorInterface|null $extractor
      */
     public function __construct(SerializerInterface $serializer = null, ExtractorInterface $extractor = null)
     {

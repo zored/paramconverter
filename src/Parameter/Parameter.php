@@ -7,6 +7,11 @@ namespace Zored\ParamConverter\Parameter;
 class Parameter
 {
     /**
+     * @var bool
+     */
+    private $hasDefault;
+
+    /**
      * @var int
      */
     private $index;
@@ -36,10 +41,11 @@ class Parameter
      * @param int    $index
      * @param string $name
      * @param mixed  $defaultValue
+     * @param bool   $hasDefault
      * @param string $class
      * @param bool   $required
      */
-    public function __construct(int $index = null, string $name = null, $defaultValue = null, string $class = null, bool $required = null)
+    public function __construct(int $index = null, string $name = null, $defaultValue = null, bool $hasDefault, string $class = null, bool $required = null)
     {
         $this->index = $index;
         $this->name = $name;
@@ -65,6 +71,11 @@ class Parameter
     public function getDefaultValue()
     {
         return $this->defaultValue;
+    }
+
+    public function hasDefaultValue()
+    {
+        return $this->hasDefault;
     }
 
     public function getClass(): ?string

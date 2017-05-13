@@ -46,10 +46,12 @@ class MethodExtractor implements ExtractorInterface
      */
     private function parseParameter(\ReflectionParameter $parameter): Parameter
     {
+        $hasDefault = $parameter->isDefaultValueAvailable();
         return new Parameter(
             $parameter->getPosition(),
             $parameter->getName(),
-            $parameter->isDefaultValueAvailable() ? $parameter->getDefaultValue() : null,
+            $hasDefault ? $parameter->getDefaultValue() : null,
+            $hasDefault,
             $parameter->getClass() ? $parameter->getClass()->getName() : null,
             !$parameter->isOptional()
         );
